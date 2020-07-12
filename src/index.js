@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import ThemeWrapper from '<styles>/ThemeWrapper/ThemeWrapper';
 import GlobalStyle from '<styles>/global';
-import BaseRoutes from '<pages>/index.jsx';
+import BaseRoutes from '<pages>/index';
 
 const App = () => (
   <ThemeWrapper>
