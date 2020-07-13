@@ -6,7 +6,6 @@ const GlobalStyle = createGlobalStyle `
 @import url('https://fonts.googleapis.com/css?family=Francois+One|Kanit');
 html {
       box-sizing: border-box;
-      font-size: 62.5%;
 }
 *, :after, :before {
     box-sizing: border-box;
@@ -17,7 +16,24 @@ body {
     background-color: #fafafa;
     color: #3c414d;
     font-family: Francois One, Helvetica, Arial, sans-serif !important;
-    font-size: 1.2rem;
   }
+
+.small_avatar {
+  border-radius: 50%;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  cursor: pointer;
+}
+
+.d_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reverse {
+  flex-direction: column;
+}
 `
 export default GlobalStyle
