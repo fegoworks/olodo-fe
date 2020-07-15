@@ -3,6 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Text from '<atoms>/Text/Text';
+import { GiBookshelf } from 'react-icons/gi';
+import { FiSearch } from 'react-icons/fi';
+import { IconContext } from 'react-icons';
 
 const Header = () => {
   return (
@@ -14,16 +17,23 @@ const Header = () => {
             <div className="line"></div>
             <div className="_line"></div>
           </div>
-          <div className="circle_avatar">
-            <i className="fas fa-swatchbook"></i>
+          <div>
+            <IconContext.Provider
+              value={{
+                color: 'green',
+                size: '3rem',
+              }}
+            >
+              <GiBookshelf></GiBookshelf>
+            </IconContext.Provider>
           </div>
         </div>
         <div className="home">
-          <Text fontSize="sm" fontWeight="semiBold">
-            Olodo Books
+          <Text fontSize="sm" color="black" fontWeight="semiBold">
+            Olodo
           </Text>
-          <Text fontSize="xs" fontWeight="light">
-            Check
+          <Text fontSize="sm" color="black" fontWeight="semiBold">
+            Books
           </Text>
         </div>
       </section>
@@ -33,22 +43,25 @@ const Header = () => {
           id="search"
           placeholder="Search books, genres, authors, etc."
         />
-        <i id="srch_btn" className="fas fa-search"></i>
+        <IconContext.Provider
+          value={{
+            color: 'green',
+            size: '2.35rem',
+          }}
+        >
+          <FiSearch></FiSearch>
+        </IconContext.Provider>
       </section>
       <section className="header-rt">
-        <i className="fas fa-swatchbook"></i>
-        <div>
-          <i className="notif_wrapper far fa-bell">
-            <span className="notif_item">3</span>
-          </i>
-        </div>
-        <div>
-          <img
-            className="small_avatar"
-            src="https://res.cloudinary.com/fego/image/upload/v1566565664/hng/fegggie_scbhf4.jpg"
-            alt="avatar"
-          />
-        </div>
+        <IconContext.Provider
+          value={{
+            color: 'green',
+            size: '1.85rem',
+            className: 'global-class-name',
+          }}
+        >
+          <GiBookshelf></GiBookshelf>
+        </IconContext.Provider>
       </section>
     </Header.Container>
   );
@@ -108,31 +121,6 @@ Header.Container = styled.section`
 
   input[type='search']:focus {
     outline: none;
-  }
-
-  .header-rt :nth-child(1),
-  .header-rt :nth-child(2) {
-    margin: 20px;
-  }
-
-  .notif_wrapper {
-    position: relative;
-  }
-
-  .notif_item {
-    position: absolute;
-    background: limegreen;
-    margin: 0 !important;
-    bottom: 0.5rem;
-    left: 0.4rem;
-    padding: 0.25rem;
-    width: 1.3rem;
-    height: 1.3rem;
-    line-height: 0.85rem;
-    font-size: small;
-    color: white;
-    border-radius: 50%;
-    text-align: center;
   }
 `;
 
