@@ -12,6 +12,7 @@ import { textColors } from '<styles>/variables/colorPalette';
  * Button Component for Button and Titles
  */
 const Button = ({
+  className,
   fontSize,
   textAlign,
   color,
@@ -21,8 +22,10 @@ const Button = ({
   padding,
   border,
   background,
+  borderRadius,
 }) => (
   <Button.Container
+    className={className}
     fontSize={fontSize}
     textAlign={textAlign}
     color={color}
@@ -31,6 +34,7 @@ const Button = ({
     padding={padding}
     border={border}
     background={background}
+    borderRadius={borderRadius}
   >
     {children}
   </Button.Container>
@@ -40,6 +44,7 @@ Button.Container = styled.button`
   ${({
     padding,
     border,
+    borderRadius,
     background,
     fontSize: userFontSize,
     fontWeight: userFontWeight,
@@ -57,6 +62,7 @@ Button.Container = styled.button`
     border: ${border || 'none'};
     background: ${background || 'none'};
     cursor: pointer;
+    border-radius: ${borderRadius || '5px'};
 
     :focus {
     outline: none;
