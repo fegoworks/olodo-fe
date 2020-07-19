@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Title from '<atoms>/Title';
+import BookDetail from '<molecules>/BookDetail';
 import BookPhoto from '<molecules>/BookPhoto';
 import { recent } from 'services/data';
 
@@ -24,29 +24,32 @@ const flickityOptions = {
   },
 };
 
+const renderBooks = (items) => {
+  return items.map((item, index) => (
+    <BookPhoto className="carousel-cell" key={index} book={item}>
+      <BookDetail
+        available={item.available}
+        title={item.title}
+        author={item.author}
+        year={item.year}
+        genre={item.genre}
+        labels={item.labels}
+      />
+    </BookPhoto>
+  ));
+};
+
 const FeaturedBooks = () => (
   <FeaturedBooks.Container>
-    <Title fontSize="sm">FEATURED BOOKS</Title>
+    <h4 className="header">FEATURED BOOKS</h4>
     <Carousel options={flickityOptions} static={true}>
-      {recent.map((book, index) => (
-        <BookPhoto className="carousel-cell" key={index} book={book} />
-      ))}
+      {renderBooks(recent)}
     </Carousel>
   </FeaturedBooks.Container>
 );
 
 FeaturedBooks.Container = styled.section`
   margin-top: 1.5rem;
-
-  .carousel_container > h4,
-  .recently_added > h4,
-  .all_books > h4 {
-    margin: 1rem 2.75rem;
-    padding-bottom: 1rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    border-bottom: solid rgb(231, 226, 226) 1px;
-  }
 `;
 
 export default FeaturedBooks;
