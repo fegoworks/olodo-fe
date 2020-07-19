@@ -7,36 +7,29 @@ import styled from 'styled-components';
 
 const BookDetail = ({ available, title, author, year, genre, labels }) => (
   <BookDetail.Container>
-    <Button className="close_book">X</Button>
-    <Text className="available" fontSize="xs" color={available}>
+    <Button className="close_btn">X</Button>
+    <h5 className={available === 'Available' ? 'available' : 'borrowed'}>
       {available}
-    </Text>
+    </h5>
     <Text fontSize="sm" color="white" fontWeight="bold">
       {title}
     </Text>
     <div>
-      <Text fontSize="sm" color="white" fontWeight="bold">
-        {author}
-      </Text>
-      <Text fontSize="sm" color="white" fontWeight="bold">
-        {year}
-      </Text>
+      <p className="book-item">{author}</p>
+      <p className="book-item">{year}</p>
     </div>
     <div>
-      <Text fontSize="sm" color="white" fontWeight="bold">
-        Genre: {genre}
-      </Text>
-      <Text fontSize="sm" color="white" fontWeight="bold">
-        Labels: {labels}
-      </Text>
+      <p className="book-item">Genre: {genre}</p>
+      <p className="book-item">Labels: {labels}</p>
     </div>
     <Button
-      color="white"
-      border="limegreen 2px solid"
-      padding="2rem"
-      background="whiteSmoke"
+      color="whiteSmoke"
+      borderRadius="0.35rem"
+      padding="0.45rem 0.75rem"
+      background="limegreen"
+      fontSize="xxxs"
     >
-      Add to Wallet
+      + Add to cart
     </Button>
   </BookDetail.Container>
 );
@@ -63,6 +56,19 @@ BookDetail.Container = styled.div`
   :hover {
     opacity: 1;
   }
-`;
 
+  .book-item {
+    color: whitesmoke;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+
+  div {
+    margin-bottom: 0.5rem;
+  }
+
+  .close_btn.close_btn {
+    display: none;
+  }
+`;
 export default BookDetail;
