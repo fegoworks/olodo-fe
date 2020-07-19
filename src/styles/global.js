@@ -1,9 +1,9 @@
+import "flickity/css/flickity.css";
 import {
   createGlobalStyle
 } from 'styled-components'
-
 const GlobalStyle = createGlobalStyle `
-@import url('https://fonts.googleapis.com/css?family=Francois+One|Kanit');
+@import url('http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin');
 html {
       box-sizing: border-box;
 }
@@ -13,10 +13,16 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-color: #fafafa;
-    color: #3c414d;
     font-family: Francois One, Helvetica, Arial, sans-serif !important;
   }
+
+.available {
+  color: limegreen;
+}
+
+.borrowed {
+  color: rgb(209, 89, 9);
+}
 
 .small_avatar {
   border-radius: 50%;
@@ -24,6 +30,14 @@ body {
   height: 3rem;
   width: 3rem;
   cursor: pointer;
+}
+
+.header{
+  margin: 1rem 2.75rem;
+  padding-bottom: 1rem;
+  font-weight: 400;
+  letter-spacing: 3px;
+  border-bottom: solid rgb(231, 226, 226) 1px;
 }
 
 .d_flex {
@@ -34,6 +48,22 @@ body {
 
 .reverse {
   flex-direction: column;
+}
+
+.flickity-prev-next-button.previous {
+  left: 0px;
+  height: 100%;
+  border-radius: 0%;
+}
+
+.flickity-prev-next-button.next {
+  right: 0px;
+  height: 100%;
+  border-radius: 0%;
+}
+
+.flickity-page-dots .dot {
+  background: limegreen;
 }
 `
 export default GlobalStyle
