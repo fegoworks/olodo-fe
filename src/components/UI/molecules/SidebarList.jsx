@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Title from '<atoms>/Title/Title';
+import Title from '<atoms>/Title';
 
 const SidebarList = ({ title, children }) => (
   <SidebarList.Container>
@@ -37,5 +37,11 @@ SidebarList.Container = styled.div`
     font-weight: 200;
   }
 `;
+
+SidebarList.propTypes = {
+  title: PropTypes.oneOfType([PropTypes.string]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
+};
 
 export default SidebarList;

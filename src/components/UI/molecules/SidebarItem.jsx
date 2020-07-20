@@ -3,8 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Text from '<atoms>/Text/Text';
-import { Link } from 'react-router-dom';
+import Text from '<atoms>/Text';
 
 const SidebarItem = ({ item, itemSize }) => (
   <SidebarItem.Container>
@@ -24,5 +23,11 @@ SidebarItem.Container = styled.li`
     text-decoration: none;
   }
 `;
+
+SidebarItem.propTypes = {
+  item: PropTypes.oneOfType([PropTypes.string]).isRequired,
+  itemSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
+};
 
 export default SidebarItem;
