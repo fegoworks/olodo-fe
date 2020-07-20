@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"],
+      "<atoms>/*": ["./components/UI/atoms/*"],
+      "<molecules>/*": ["./components/UI/molecules/*"],
+      "<organisms>/*": ["./components/UI/organisms/*"],
+      "<pages>/*": ["./components/pages/*"],
+      "<styles>/*": ["./styles/*"],
+      "<core>/*": ["./core/*"],
+      "<state>/*": ["./state/*"],
+      "<variables>/*": ["./styles/variables/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

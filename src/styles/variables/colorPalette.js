@@ -6,7 +6,9 @@ export const textColors = {
   primary: '#0F2944',
   navbar: '#964B8A',
   purpleLight: '#B099C1',
-  grayLight: '#E7EAF0'
+  grayLight: '#E7EAF0',
+  whiteSmoke: 'whitesmoke',
+  available: 'limegreen'
 }
 
 export const backgroundColors = {
