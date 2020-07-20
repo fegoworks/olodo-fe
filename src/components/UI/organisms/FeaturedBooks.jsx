@@ -1,7 +1,6 @@
 /** @format */
 
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import BookDetail from '<molecules>/BookDetail';
 import BookPhoto from '<molecules>/BookPhoto';
@@ -26,7 +25,15 @@ const flickityOptions = {
 
 const renderBooks = (items) => {
   return items.map((item, index) => (
-    <BookPhoto className="carousel-cell" key={index} book={item}>
+    <BookPhoto
+      width="22%"
+      borderRadius="5px"
+      marginRight="1.35rem"
+      height="21rem"
+      className="carousel-cell"
+      key={index}
+      book={item}
+    >
       <BookDetail
         available={item.available}
         title={item.title}

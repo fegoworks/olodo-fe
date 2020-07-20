@@ -5,7 +5,7 @@ export const recent = [{
     genre: 'Motivational',
     labels: 'Creative',
     year: 2014,
-    available: 'Borrowed Out'
+    available: 'Sold Out'
   },
   {
     author: 'James Charles',
@@ -32,7 +32,7 @@ export const recent = [{
     genre: 'Motivational',
     labels: 'Creative',
     year: 2014,
-    available: 'Borrowed Out'
+    available: 'Sold Out'
   },
   {
     author: 'Ivan Idris',
@@ -52,7 +52,7 @@ export const books = [{
     genre: 'Motivational',
     labels: 'Creative',
     year: 2014,
-    available: 'Borrowed Out'
+    available: 'Sold Out'
   },
   {
     author: 'James Charles',
@@ -79,7 +79,7 @@ export const books = [{
     genre: 'Motivational',
     labels: 'Creative',
     year: 2014,
-    available: 'Borrowed Out'
+    available: 'Sold Out'
   },
   {
     author: 'Ivan Idris',
@@ -97,7 +97,7 @@ export const books = [{
     genre: 'Motivational',
     labels: 'Creative',
     year: 2014,
-    available: 'Borrowed Out'
+    available: 'Sold Out'
   },
   {
     author: 'James Charles',
@@ -124,7 +124,7 @@ export const books = [{
     genre: 'Motivational',
     labels: 'Creative',
     year: 2014,
-    available: 'Borrowed Out'
+    available: 'Sold Out'
   },
   {
     author: 'Ivan Idris',
@@ -142,7 +142,7 @@ export const books = [{
     genre: 'Motivational',
     labels: 'Creative',
     year: 2014,
-    available: 'Borrowed Out'
+    available: 'Sold Out'
   },
   {
     author: 'James Charles',
