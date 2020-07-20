@@ -14,7 +14,7 @@ const button = (available) => {
     <Button
       color="whiteSmoke"
       borderRadius="0.35rem"
-      padding="0.45rem 0.75rem"
+      padding="0.25rem 0.55rem"
       background="limegreen"
       fontSize="xxxs"
     >
@@ -23,66 +23,45 @@ const button = (available) => {
   );
 };
 
-const BookDetail = ({ available, title, author, year, genre, labels }) => (
-  <BookDetail.Container>
-    <Button className="close_btn">X</Button>
+const GridDetail = ({ available, title, author, year, genre, labels }) => (
+  <GridDetail.Container>
     <h5 className={available === 'Available' ? 'available' : 'borrowed'}>
       {available}
     </h5>
-    <Text fontSize="sm" color="white" fontWeight="bold">
+    <Text fontSize="xs" color="black" fontWeight="bold">
       {title}
     </Text>
     <div>
-      <p className="book-item">{author}</p>
-      <p className="book-item">{year}</p>
+      <p className="grid-item">{author}</p>
+      <p className="grid-item">{year}</p>
     </div>
     <div>
-      <p className="book-item">Genre: {genre}</p>
-      <p className="book-item">Labels: {labels}</p>
+      <p className="grid-item">Genre: {genre}</p>
+      <p className="grid-item">Labels: {labels}</p>
     </div>
     {button(available)}
-  </BookDetail.Container>
+  </GridDetail.Container>
 );
 
-BookDetail.Container = styled.div`
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 21rem;
-  padding: 1.75rem;
-  padding-top: 7rem;
-  background: rgb(83, 78, 78);
-  background: linear-gradient(
-    180deg,
-    rgba(83, 78, 78, 0.6) 21%,
-    rgba(0, 0, 0, 0.95) 62%
-  );
-  z-index: 1;
-  transition: 0.5s ease;
-  -webkit-transition: 0.5s ease;
+GridDetail.Container = styled.div`
+  padding: 0.75rem;
 
-  :hover {
-    opacity: 1;
-  }
-
-  .book-item {
-    color: whitesmoke;
-    font-size: 0.7rem;
+  h5 {
     margin: 0;
+    margin-bottom: 0.2rem;
+  }
+  .grid-item {
+    margin: 0;
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
   }
 
   div {
-    margin-bottom: 0.5rem;
-  }
-
-  .close_btn.close_btn {
-    display: none;
+    margin: 0.5rem 0;
   }
 `;
 
-BookDetail.defaultProps = {
+GridDetail.defaultProps = {
   available: 'Available',
   title: 'Book One',
   author: 'Author One',
@@ -91,7 +70,7 @@ BookDetail.defaultProps = {
   labels: 'Crime',
 };
 
-BookDetail.propTypes = {
+GridDetail.propTypes = {
   available: PropTypes.oneOf(['Available', 'Sold Out']),
   title: PropTypes.oneOfType([PropTypes.string]).isRequired,
   author: PropTypes.oneOfType([PropTypes.string]).isRequired,
@@ -100,4 +79,4 @@ BookDetail.propTypes = {
   labels: PropTypes.oneOfType([PropTypes.string]).isRequired,
 };
 
-export default BookDetail;
+export default GridDetail;
