@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Text from '<atoms>/Text';
 import { GiBookshelf } from 'react-icons/gi';
 import { FiSearch } from 'react-icons/fi';
+import { FiShoppingCart } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 
 const Header = () => {
@@ -59,7 +60,7 @@ const Header = () => {
             className: 'global-class-name',
           }}
         >
-          <GiBookshelf></GiBookshelf>
+          <FiShoppingCart></FiShoppingCart>
         </IconContext.Provider>
       </section>
     </Header.Container>
@@ -120,6 +121,21 @@ Header.Container = styled.section`
 
   input[type='search']:focus {
     outline: none;
+  }
+
+  @media (max-width: 1024px) {
+    .header-rt :nth-child(1) {
+      margin: 0;
+    }
+
+    .header-md :nth-child(2) {
+      background: none;
+      border: none;
+    }
+
+    input[type='search'] {
+      display: none;
+    }
   }
 `;
 
