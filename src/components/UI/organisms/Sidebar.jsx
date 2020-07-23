@@ -30,6 +30,10 @@ Sidebar.Container = styled.aside`
   -webkit-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
   -moz-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
   box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export default Sidebar;
