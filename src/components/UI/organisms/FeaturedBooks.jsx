@@ -57,6 +57,37 @@ const FeaturedBooks = () => (
 
 FeaturedBooks.Container = styled.section`
   margin-top: 1.5rem;
+
+  @media (max-width: 1024px) {
+    .carousel-cell {
+      width: 20%;
+      margin-right: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-cell {
+      width: 30%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .carousel-cell {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .carousel-cell {
+      width: 62%;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .carousel-cell {
+      width: 70%;
+    }
+  }
 `;
 
 export default FeaturedBooks;

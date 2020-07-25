@@ -7,10 +7,10 @@ const routes = {
       path: '/',
       component: HomePage
     },
-    {
-      path: '/:bookId',
-      component: BookPage
-    }
+    // {
+    //   path: '/:bookId',
+    //   component: BookPage
+    // }
   ]
 }
 export default routes

@@ -28,5 +28,9 @@ HomePage.Main = styled.section``;
 HomePage.Books = styled.section`
   margin-left: 20rem;
   padding-bottom: 15rem;
+
+  @media (max-width: 1024px) {
+    margin-left: 0;
+  }
 `;
 export default HomePage;

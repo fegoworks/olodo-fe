@@ -34,13 +34,13 @@ BookPhoto.Container = styled.div`
     margin-right: ${marginRight};
 
     img {
-    width: 100%;
-    height: 21rem;
-    -webkit-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
-    -moz-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
-    box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
-  }
-`}
+      width: 100%;
+      height: 21rem;
+      -webkit-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+      -moz-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+      box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+    }
+  `}
 `;
 
 BookPhoto.defaultProps = {
@@ -53,8 +53,7 @@ BookPhoto.defaultProps = {
 
 BookPhoto.propTypes = {
   book: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
+  children: PropTypes.element.isRequired,
   className: PropTypes.oneOfType([PropTypes.string]).isRequired,
   width: PropTypes.oneOfType([PropTypes.string]).isRequired,
   borderRadius: PropTypes.oneOfType([PropTypes.string]).isRequired,
