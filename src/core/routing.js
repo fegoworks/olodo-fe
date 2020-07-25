@@ -1,5 +1,5 @@
 import HomePage from '<pages>/HomePage'
-import BookPage from '<pages>/BookPage'
+import CartPage from '<pages>/CartPage'
 
 const routes = {
   default: [{
@@ -7,10 +7,10 @@ const routes = {
       path: '/',
       component: HomePage
     },
-    // {
-    //   path: '/:bookId',
-    //   component: BookPage
-    // }
+    {
+      path: '/cart',
+      component: CartPage
+    }
   ]
 }
 export default routes
