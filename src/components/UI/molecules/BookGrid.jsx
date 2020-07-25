@@ -6,27 +6,29 @@ import PropTypes from 'prop-types';
 import GridDetail from '<molecules>/GridDetail';
 import BookPhoto from '<molecules>/BookPhoto';
 
-const renderBooks = (items) => {
-  return items.map((item, index) => (
-    <BookPhoto className="book_grid" key={index} book={item}>
-      <GridDetail
-        available={item.available}
-        title={item.title}
-        author={item.author}
-        year={item.year}
-        genre={item.genre}
-        labels={item.labels}
-      />
-    </BookPhoto>
-  ));
-};
+const BookGrid = ({ title, books }) => {
+  return (
+    <BookGrid.Container>
+      <h4 className="header">{title}</h4>
+      <BookGrid.Grid>{renderBooks(books)}</BookGrid.Grid>
+    </BookGrid.Container>
+  );
 
-const BookGrid = ({ title, books }) => (
-  <BookGrid.Container>
-    <h4 className="header">{title}</h4>
-    <BookGrid.Grid>{renderBooks(books)}</BookGrid.Grid>
-  </BookGrid.Container>
-);
+  function renderBooks(items) {
+    return items.map((item, index) => (
+      <BookPhoto className="book_grid" key={index} book={item}>
+        <GridDetail
+          available={item.available}
+          title={item.title}
+          author={item.author}
+          year={item.year}
+          genre={item.genre}
+          labels={item.labels}
+        />
+      </BookPhoto>
+    ));
+  }
+};
 
 BookGrid.Container = styled.section`
   margin-top: 5rem;
