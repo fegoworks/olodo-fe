@@ -75,7 +75,7 @@ Button.defaultProps = {
   fontWeight: 'normal',
   textAlign: 'left',
   fontSize: 'sm',
-  color: 'whitesmoke',
+  color: 'whiteSmoke',
 };
 
 Button.propTypes = {

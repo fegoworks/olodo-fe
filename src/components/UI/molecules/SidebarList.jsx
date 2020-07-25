@@ -40,8 +40,7 @@ SidebarList.Container = styled.div`
 
 SidebarList.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string]).isRequired,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
+  children: PropTypes.oneOfType([PropTypes.node]).isRequired,
 };
 
 export default SidebarList;

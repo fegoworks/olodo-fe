@@ -53,8 +53,7 @@ BookPhoto.defaultProps = {
 
 BookPhoto.propTypes = {
   book: PropTypes.oneOfType([PropTypes.object]).isRequired,
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-    .isRequired,
+  children: PropTypes.element.isRequired,
   className: PropTypes.oneOfType([PropTypes.string]).isRequired,
   width: PropTypes.oneOfType([PropTypes.string]).isRequired,
   borderRadius: PropTypes.oneOfType([PropTypes.string]).isRequired,
