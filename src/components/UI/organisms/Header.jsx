@@ -1,22 +1,22 @@
 /** @format */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Text from '<atoms>/Text';
+import Hamburger from '<molecules>/Hamburger';
 import { GiBookshelf } from 'react-icons/gi';
 import { FiSearch } from 'react-icons/fi';
 import { FiShoppingCart } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
+import { HamburgerContext } from '<state>/HamburgerContext';
 
 const Header = () => {
+  const { toggle } = useContext(HamburgerContext);
+
   return (
     <Header.Container>
       <section className="header-lt">
         <div className="d_flex">
-          <div className="hamburger">
-            <div className="_line"></div>
-            <div className="line"></div>
-            <div className="_line"></div>
-          </div>
+          <Hamburger handleClick={toggle} />
           <div>
             <IconContext.Provider
               value={{
@@ -60,8 +60,9 @@ const Header = () => {
             className: 'global-class-name',
           }}
         >
-          <FiShoppingCart></FiShoppingCart>
-        </IconContext.Provider>
+          <FiShoppingCart />
+        </IconContext.Provider>{' '}
+        <p className="cart">Cart ({0})</p>
       </section>
     </Header.Container>
   );
@@ -87,6 +88,13 @@ Header.Container = styled.section`
     p {
       margin: 0;
     }
+  }
+
+  .cart {
+    margin-left: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: grey;
   }
 
   .header-lt,
