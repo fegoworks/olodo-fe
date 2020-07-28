@@ -13,7 +13,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: Francois One, Helvetica, Arial, sans-serif !important;
+    font-family: Ubuntu, 'times new roman', times, roman, serif;
   }
 
 .available {
