@@ -12,7 +12,7 @@ const CartPage = () => {
       <CartPage.Container>
         <CartPage.Items>
           <div className="item">
-            <div className="d_flex">
+            <div className="d_flex book_detail">
               <img
                 src="https://static.zlibcdn.com/covers/books/d2/81/4a/d2814a7fc86c846a847e081d65237e47.jpg"
                 alt="item"
@@ -26,24 +26,27 @@ const CartPage = () => {
                 </Text>
               </div>
             </div>
-            <div className="d_flex">
+            <div className="d_flex book_features">
+              <div className="d_flex">
+                <Button color="grey" fontSize="base">
+                  -
+                </Button>
+                <span className="quantity">3</span>
+                <Button color="grey" fontSize="base">
+                  +
+                </Button>
+              </div>
+              <Text fontSize="xs" fontWeight="bold" margin="0">
+                $4000.00
+              </Text>
               <Button color="grey" fontSize="base">
-                -
-              </Button>
-              <span className="quantity">3</span>
-              <Button color="grey" fontSize="base">
-                +
+                x
               </Button>
             </div>
-            <Text fontSize="xs" fontWeight="bold" margin="0">
-              $4000.00
-            </Text>
-            <Button color="grey" fontSize="base">
-              x
-            </Button>
           </div>
+
           <CartPage.Footer>
-            <a href="">Continue Shopping</a>
+            <a href="">← Continue Shopping</a>
             <div>
               Total: <span className="total">$4000.00</span>
             </div>
@@ -73,12 +76,12 @@ const CartPage = () => {
           <div className="expiry">
             <div>
               <label htmlFor="">Expiry Date</label>
-              <input type="text" />
-              <input type="text" />
+              <input type="text" name="month" placeholder="mm" />
+              <input type="text" name="year" placeholder="yyyy" />
             </div>
             <div>
               <label htmlFor="">CVV</label>
-              <input type="text" />
+              <input type="text" name="cvv" placeholder="xxx" />
             </div>
           </div>
           <Button
@@ -102,14 +105,24 @@ CartPage.Container = styled.section`
   margin: 1.65rem 2.75rem;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 CartPage.Items = styled.section`
   flex-basis: 60%;
+  margin-bottom: 3rem;
   .item {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
+    padding: 1rem;
+    -webkit-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+    -moz-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+    box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
 
     img {
       width: 4rem;
@@ -122,11 +135,38 @@ CartPage.Items = styled.section`
       margin-left: 1rem;
     }
   }
+
+  .book_detail {
+    flex-basis: 30%;
+    margin-right: 4rem;
+  }
+
+  .book_features {
+    flex-basis: 70%;
+    justify-content: space-between;
+  }
+
   .quantity {
     border: 0.01rem grey solid;
     padding: 0.2rem 0.85rem;
     margin: 0 0.75rem;
     font-size: 0.75rem;
+  }
+
+  @media (max-width: 576px) {
+    .item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .book_detail {
+      margin-bottom: 1rem;
+    }
+
+    .book_features {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 `;
 
@@ -146,12 +186,33 @@ CartPage.Footer = styled.footer`
     font-size: 1.45rem;
     font-weight: 700;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+
+    a {
+      margin-top: 1rem;
+      align-self: flex-start;
+      font-size: 0.85rem;
+    }
+
+    .total {
+      font-size: 1rem;
+    }
+
+    div {
+      align-self: flex-end;
+    }
+  }
 `;
 
 CartPage.Checkout = styled.form`
   background: whitesmoke;
   padding: 1.5rem;
   border-radius: 0.5rem;
+  -webkit-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+  -moz-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+  box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
 
   .radio {
     label {
