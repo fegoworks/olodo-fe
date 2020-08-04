@@ -65,5 +65,38 @@ body {
 .flickity-page-dots .dot {
   background: limegreen;
 }
+
+@media (max-width: 576px) {
+  .flickity-prev-next-button.previous,
+  .flickity-prev-next-button.next {
+    width: 2.25rem;
+  }
+
+  .header{ 
+    margin: 1rem 2.25rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .flickity-prev-next-button.previous,
+  .flickity-prev-next-button.next {
+    width: 1.85rem;
+  }
+
+  .header{ 
+    margin: 1rem 1.85rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .flickity-prev-next-button.previous,
+  .flickity-prev-next-button.next {
+    width: 1.35rem;
+  }
+
+  .header{ 
+    margin: 1rem 1.35rem;
+  }
+}
 `
 export default GlobalStyle
