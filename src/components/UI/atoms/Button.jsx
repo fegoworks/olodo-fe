@@ -24,6 +24,7 @@ const Button = ({
   background,
   borderRadius,
   width,
+  handleClick,
 }) => (
   <Button.Container
     className={className}
@@ -37,6 +38,7 @@ const Button = ({
     background={background}
     borderRadius={borderRadius}
     width={width}
+    onClick={handleClick}
   >
     {children}
   </Button.Container>
