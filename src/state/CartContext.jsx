@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { createContext, useReducer, use } from 'react';
+import React, { createContext, useReducer } from 'react';
 import { CartReducer, sumItems } from './CartReducer';
 
 export const CartContext = createContext();
