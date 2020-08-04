@@ -6,6 +6,7 @@
       "<atoms>/*": ["./components/UI/atoms/*"],
       "<molecules>/*": ["./components/UI/molecules/*"],
       "<organisms>/*": ["./components/UI/organisms/*"],
+      "<templates>/*": ["./components/UI/templates/*"],
       "<pages>/*": ["./components/pages/*"],
       "<styles>/*": ["./styles/*"],
       "<core>/*": ["./core/*"],

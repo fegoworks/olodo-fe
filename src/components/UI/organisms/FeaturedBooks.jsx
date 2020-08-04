@@ -23,37 +23,32 @@ const flickityOptions = {
   },
 };
 
-const renderBooks = (items) => {
-  return items.map((item, index) => (
-    <BookPhoto
-      width="22%"
-      borderRadius="5px"
-      marginRight="1.35rem"
-      height="21rem"
-      className="carousel-cell"
-      key={index}
-      book={item}
-    >
-      <BookDetail
-        available={item.available}
-        title={item.title}
-        author={item.author}
-        year={item.year}
-        genre={item.genre}
-        labels={item.labels}
-      />
-    </BookPhoto>
-  ));
-};
+const FeaturedBooks = () => {
+  return (
+    <FeaturedBooks.Container>
+      <h4 className="header">FEATURED BOOKS</h4>
+      <Carousel options={flickityOptions} static={true}>
+        {renderBooks(recent)}
+      </Carousel>
+    </FeaturedBooks.Container>
+  );
 
-const FeaturedBooks = () => (
-  <FeaturedBooks.Container>
-    <h4 className="header">FEATURED BOOKS</h4>
-    <Carousel options={flickityOptions} static={true}>
-      {renderBooks(recent)}
-    </Carousel>
-  </FeaturedBooks.Container>
-);
+  function renderBooks(items) {
+    return items.map((item, index) => (
+      <BookPhoto
+        width="22%"
+        borderRadius="5px"
+        marginRight="1.35rem"
+        height="21rem"
+        className="carousel-cell"
+        key={index}
+        book={item}
+      >
+        <BookDetail book={item} />
+      </BookPhoto>
+    ));
+  }
+};
 
 FeaturedBooks.Container = styled.section`
   margin-top: 1.5rem;

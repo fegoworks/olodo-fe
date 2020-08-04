@@ -19,6 +19,7 @@ const Text = ({
   fontWeight,
   children,
   padding,
+  margin,
 }) => (
   <Text.Container
     fontSize={fontSize}
@@ -27,6 +28,7 @@ const Text = ({
     display={display}
     fontWeight={fontWeight}
     padding={padding}
+    margin={margin}
   >
     {children}
   </Text.Container>
@@ -40,6 +42,7 @@ Text.Container = styled.p`
     display,
     textAlign,
     color,
+    margin,
     theme: { fontSize, fontWeight, textColors },
   }) => `
     text-align: ${textAlign};
@@ -48,6 +51,7 @@ Text.Container = styled.p`
     padding: ${padding || '0'};
     font-size: ${fontSize[userFontSize]};
     font-weight: ${fontWeight[userFontWeight]};
+    margin: ${margin};
 `}
 `;
 

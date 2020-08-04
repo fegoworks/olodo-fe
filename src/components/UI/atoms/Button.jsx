@@ -23,6 +23,8 @@ const Button = ({
   border,
   background,
   borderRadius,
+  width,
+  handleClick,
 }) => (
   <Button.Container
     className={className}
@@ -35,6 +37,8 @@ const Button = ({
     border={border}
     background={background}
     borderRadius={borderRadius}
+    width={width}
+    onClick={handleClick}
   >
     {children}
   </Button.Container>
@@ -44,6 +48,7 @@ Button.Container = styled.button`
   ${({
     padding,
     border,
+    width,
     borderRadius,
     background,
     fontSize: userFontSize,
@@ -63,6 +68,7 @@ Button.Container = styled.button`
     background: ${background || 'none'};
     cursor: pointer;
     border-radius: ${borderRadius || '5px'};
+    width: ${width};
 
     :focus {
     outline: none;

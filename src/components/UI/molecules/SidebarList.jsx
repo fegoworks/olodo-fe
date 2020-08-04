@@ -17,8 +17,8 @@ SidebarList.Container = styled.div`
   padding-bottom: 0.75rem;
   border-bottom: solid rgb(231, 226, 226) 1px;
 
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
 
   .side_items {
     list-style-type: none;

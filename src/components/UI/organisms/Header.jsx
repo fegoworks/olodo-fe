@@ -4,13 +4,15 @@ import styled from 'styled-components';
 import Text from '<atoms>/Text';
 import Hamburger from '<molecules>/Hamburger';
 import { GiBookshelf } from 'react-icons/gi';
-import { FiSearch } from 'react-icons/fi';
 import { FiShoppingCart } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 import { HamburgerContext } from '<state>/HamburgerContext';
+import { CartContext } from '<state>/CartContext';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const { toggle } = useContext(HamburgerContext);
+  const { itemCount } = useContext(CartContext);
 
   return (
     <Header.Container>
@@ -21,7 +23,7 @@ const Header = () => {
             <IconContext.Provider
               value={{
                 color: 'green',
-                size: '3rem',
+                size: '2rem',
               }}
             >
               <GiBookshelf></GiBookshelf>
@@ -32,37 +34,24 @@ const Header = () => {
           <Text fontSize="sm" color="black" fontWeight="semiBold">
             Olodo
           </Text>
-          <Text fontSize="sm" color="black" fontWeight="semiBold">
+          <Text fontSize="sm" color="black" fontWeight="">
             Books
           </Text>
         </div>
-      </section>
-      <section className="header-md">
-        <input
-          type="search"
-          id="search"
-          placeholder="Search books, genres, authors, etc."
-        />
-        <IconContext.Provider
-          value={{
-            color: 'green',
-            size: '2.35rem',
-          }}
-        >
-          <FiSearch></FiSearch>
-        </IconContext.Provider>
       </section>
       <section className="header-rt">
         <IconContext.Provider
           value={{
             color: 'green',
-            size: '1.85rem',
+            size: '1.55rem',
             className: 'global-class-name',
           }}
         >
           <FiShoppingCart />
         </IconContext.Provider>{' '}
-        <p className="cart">Cart ({0})</p>
+        <Link to="/cart" className="cart">
+          Cart ({itemCount})
+        </Link>
       </section>
     </Header.Container>
   );
@@ -75,8 +64,8 @@ Header.Container = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 6.75rem;
-  padding: 0 1.5rem;
+  height: 4.75rem;
+  padding: 0 2.75rem;
   border-bottom: rgb(231, 226, 226) solid 1px;
   background-color: white;
 
@@ -113,25 +102,11 @@ Header.Container = styled.section`
     display: flex;
     align-items: center;
   }
-
-  .header-md :nth-child(2) {
-    padding: 0.6rem;
-    background: whitesmoke;
-    border: solid rgb(231, 226, 226) 1px;
-    border-left: none;
-  }
-
-  .header-md input[type='search'] {
-    width: 30rem;
-    padding: 0.65rem;
-    border: solid rgb(231, 226, 226) 1px;
-  }
-
-  input[type='search']:focus {
-    outline: none;
-  }
-
   @media (max-width: 1024px) {
+    padding: 0 2rem;
+    .home {
+      display: none;
+    }
     .header-rt :nth-child(1) {
       margin: 0;
     }
@@ -144,6 +119,18 @@ Header.Container = styled.section`
     input[type='search'] {
       display: none;
     }
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 1.75rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 0 1.35rem;
+  }
+
+  @media (max-width: 320px) {
+    padding: 0 1rem;
   }
 `;
 
