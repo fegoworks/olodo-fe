@@ -1,10 +1,12 @@
 /** @format */
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import Text from '<atoms>/Text';
 import Button from '<atoms>/Button';
+import { CartContext } from '<state>/CartContext';
 
-const CartItem = (book) => {
+const CartItem = ({ book }) => {
+  const { increase, decrease, removeProduct } = useContext(CartContext);
   return (
     <CartItem.Container>
       <div className="d_flex book_detail">
@@ -14,24 +16,36 @@ const CartItem = (book) => {
             {book.title}
           </Text>
           <Text fontSize="xs" margin="0">
-            {book.price}
+            ${book.price}.00
           </Text>
         </div>
       </div>
       <div className="d_flex book_features">
         <div className="d_flex">
-          <Button color="grey" fontSize="base">
+          <Button
+            handleClick={() => decrease(book)}
+            color="grey"
+            fontSize="base"
+          >
             -
           </Button>
-          <span className="quantity">3</span>
-          <Button color="grey" fontSize="base">
+          <span className="quantity">{book.quantity}</span>
+          <Button
+            handleClick={() => increase(book)}
+            color="grey"
+            fontSize="base"
+          >
             +
           </Button>
         </div>
         <Text fontSize="xs" fontWeight="bold" margin="0">
-          $4000.00
+          ${book.price * book.quantity}.00
         </Text>
-        <Button color="grey" fontSize="base">
+        <Button
+          handleClick={() => removeProduct(book)}
+          color="grey"
+          fontSize="base"
+        >
           x
         </Button>
       </div>
@@ -48,6 +62,7 @@ CartItem.Container = styled.div`
   -webkit-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
   -moz-box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
   box-shadow: 1px 30px 35px -4px rgba(219, 219, 219, 1);
+  margin: 1.5rem 0;
 
   img {
     width: 4rem;

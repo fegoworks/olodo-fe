@@ -55,6 +55,7 @@ const GridDetail = ({ book }) => {
       </Button>
     ) : (
       <Button
+        className="btn_add"
         color="whiteSmoke"
         borderRadius="0.35rem"
         padding="0.25rem 0.55rem"
@@ -93,6 +94,16 @@ GridDetail.Container = styled.div`
 
   .btn_more:active {
     border: 2px solid purple;
+  }
+
+  .btn_add:hover {
+    background: none;
+    border: 1px solid limegreen;
+    color: lime;
+  }
+
+  .btn_add:active {
+    border: 2px solid lime;
   }
 `;
 

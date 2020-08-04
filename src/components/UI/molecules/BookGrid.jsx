@@ -15,16 +15,9 @@ const BookGrid = ({ title, books }) => {
   );
 
   function renderBooks(items) {
-    return items.map((item, index) => (
-      <BookPhoto className="book_grid" key={index} book={item}>
-        <GridDetail
-          available={item.available}
-          title={item.title}
-          author={item.author}
-          year={item.year}
-          genre={item.genre}
-          labels={item.labels}
-        />
+    return items.map((item) => (
+      <BookPhoto className="book_grid" key={item.id} book={item}>
+        <GridDetail book={item} />
       </BookPhoto>
     ));
   }

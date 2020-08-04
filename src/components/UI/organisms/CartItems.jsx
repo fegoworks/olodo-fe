@@ -1,19 +1,27 @@
 /** @format */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import CartItem from '<molecules>/CartItem';
-import { recent } from 'services/data';
+import { CartContext } from '<state>/CartContext';
 
 const CartItems = () => {
+  const { cartItems, total } = useContext(CartContext);
+
   return (
     <CartItems.Container>
-      {renderItems(recent)}
+      {cartItems.length === 0 ? (
+        <div className="cart_empty">Cart is empty</div>
+      ) : (
+        renderItems(cartItems)
+      )}
       <CartItems.Footer>
-        <a href="">← Continue Shopping</a>
+        <Link className="back_btn" to="/">
+          ← Continue Shopping
+        </Link>
         <div>
-          Total: <span className="total">$4000.00</span>
+          Total: <span className="total">${total}</span>
         </div>
       </CartItems.Footer>
     </CartItems.Container>
@@ -27,6 +35,12 @@ const CartItems = () => {
 CartItems.Container = styled.section`
   flex-basis: 60%;
   margin-bottom: 3rem;
+
+  .cart_empty {
+    font-size: 2rem;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+  }
 `;
 
 CartItems.Footer = styled.footer`
@@ -35,7 +49,7 @@ CartItems.Footer = styled.footer`
   align-items: center;
   justify-content: space-between;
 
-  a {
+  .back_btn {
     text-decoration: none;
     font-size: 1.15rem;
     font-weight: 700;
@@ -49,7 +63,7 @@ CartItems.Footer = styled.footer`
   @media (max-width: 768px) {
     flex-direction: column-reverse;
 
-    a {
+    .back_btn {
       margin-top: 1rem;
       align-self: flex-start;
       font-size: 0.85rem;
