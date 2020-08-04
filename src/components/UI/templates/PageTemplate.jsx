@@ -8,16 +8,15 @@ const PageTemplate = ({ children }) => {
   return (
     <PageTemplate.Container>
       <Header />
-      <PageTemplate.Main>
+      <React.Fragment>
         <Sidebar />
         <PageTemplate.Body>{children}</PageTemplate.Body>
-      </PageTemplate.Main>
+      </React.Fragment>
     </PageTemplate.Container>
   );
 };
 
 PageTemplate.Container = styled.section``;
-PageTemplate.Main = styled.section``;
 PageTemplate.Body = styled.section`
   margin-left: 20rem;
   padding-bottom: 15rem;
